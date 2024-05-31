@@ -52,4 +52,12 @@ const products = [
     price: 94999
   }
 ]
+// import { useUserStore } from '~/stores/user'
+// const userStore = useUserStore()
+
+// let products = ref(null)
+// onBeforeMount(async () => {
+//   products.value = await useFetch('/api/prisma/get-all-products')
+//   setTimeout(() => (userStore.isLoading = false), 1000)
+// })
 </script>
