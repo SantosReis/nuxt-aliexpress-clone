@@ -34,6 +34,38 @@
             </div>
           </div>
         </div>
+
+        <div class="md:hidden block my-4" />
+        <div class="md:w-[35%]">
+          <div id="Summary" class="bg-white rounded-lg p-4">
+            <div class="text-2xl font-extrabold mb-2">Summary</div>
+            <div class="flex items-center justify-between my-4">
+              <div class="font-semibold">Total</div>
+              <div class="text-2xl font-semibold">$ <span class="font-extrabold">000</span></div>
+            </div>
+            <button
+              class="flex items-center justify-center bg-[#FD374F] w-full text-white text-[21px] font-semibold p-1.5 rounded-full mt-4"
+            >
+              Checkout
+            </button>
+          </div>
+
+          <div id="PaymentProtection" class="bg-white rounded-lg p-4 mt-4">
+            <div class="text-lg font-semibold mb-2">Payment methods</div>
+            <div class="flex items-center justify-start gap-8 my-4">
+              <div v-for="card in cards">
+                <img class="h-6" :src="card" />
+              </div>
+            </div>
+
+            <div class="border-b" />
+
+            <div class="text-lg font-semibold mb-2 mt-2">Buyer Protection</div>
+            <p class="my-2">
+              Get full refund if the item is not as described or if is not delivered
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </MainLayout>
@@ -57,4 +89,7 @@ const products = [
     price: 9699
   }
 ]
+
+const cards = ref(['visa.png', 'mastercard.png', 'paypal.png', 'applepay.png'])
+
 </script>
