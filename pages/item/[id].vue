@@ -79,6 +79,18 @@ const route = useRoute()
 let product = ref(null)
 let currentImage = ref(null)
 
+onBeforeMount(async () => {
+  product.value = await useFetch(`/api/prisma/get-product-by-id/${route.params.id}`)
+})
+
+watchEffect(() => {
+  if (product.value && product.value.data) {
+    currentImage.value = product.value.data.url
+    images.value[0] = product.value.data.url
+    userStore.isLoading = false
+  }
+})
+
 const isInCart = computed(() => {
   let res = false
   userStore.cart.forEach((prod) => {
