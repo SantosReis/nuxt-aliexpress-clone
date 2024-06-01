@@ -112,7 +112,7 @@ const userStore = useUserStore()
 const user = useSupabaseUser()
 const route = useRoute()
 
-// definePageMeta({ middleware: 'auth' })
+definePageMeta({ middleware: 'auth' })
 
 let stripe = null
 let elements = null
@@ -137,7 +137,7 @@ onBeforeMount(async () => {
 
 watchEffect(() => {
   if (route.fullPath == '/checkout' && !user.value) {
-    return navigateTo('/auth')
+    return navigateTo('/login')
   }
 })
 

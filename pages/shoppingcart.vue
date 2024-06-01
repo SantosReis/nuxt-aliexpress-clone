@@ -9,7 +9,7 @@
 
           <div v-if="!user" class="flex text-center">
             <NuxtLink
-              to="/auth"
+              to="/login"
               class="bg-[#FD374F] w-full text-white text-[21px] font-semibold p-1.5 rounded-full mt-4"
             >
               Sign in
