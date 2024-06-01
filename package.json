@@ -17,7 +17,7 @@
     "@nuxtjs/tailwindcss": "^6.12.0",
     "nuxt": "^3.11.2",
     "nuxt-icon": "^0.6.10",
-    "@stripe/stripe-js": "^3.4.1"
+    "vue-stripe-js": "^1.0.2"
   },
   "dependencies": {
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
@@ -26,6 +26,7 @@
     "nuxt-lodash": "^2.5.3",
     "pinia": "^2.1.7",
     "prisma": "^5.14.0",
+    "@stripe/stripe-js": "^3.4.1",
     "stripe": "^15.8.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"

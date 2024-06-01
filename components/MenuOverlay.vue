@@ -38,7 +38,7 @@
         </li>
 
         <li
-          v-if="true"
+          v-if="user"
           @click="signOut()"
           class="relative flex items-center justify-between py-2.5 border-b px-3 hover:bg-gray-100 cursor-pointer"
         >
@@ -67,12 +67,19 @@
 import { useUserStore } from '~/stores/user'
 const userStore = useUserStore()
 
+const client = useSupabaseClient()
+const user = useSupabaseUser()
+
 const goTo = (url) => {
   userStore.isMenuOverlay = false
   return navigateTo(`/${url}`)
 }
 
-const signOut = () => {}
+const signOut = () => {
+  client.auth.signOut()
+  userStore.isMenuOverlay = false
+  return navigateTo('/')
+}
 
 const signIn = () => {
   userStore.isMenuOverlay = false
