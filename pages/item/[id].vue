@@ -117,13 +117,7 @@ const images = ref([
   'https://picsum.photos/id/144/800/800'
 ])
 
-watchEffect(() => {
-  currentImage.value = 'https://picsum.photos/id/77/800/800'
-  images.value[0] = 'https://picsum.photos/id/77/800/800'
-})
-
 const addToCart = () => {
-  console.log('add to cart')
-  // userStore.cart.push(product.value.data)
+  userStore.cart.push(product.value.data)
 }
 </script>
