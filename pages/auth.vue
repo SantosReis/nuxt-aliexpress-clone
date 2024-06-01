@@ -29,5 +29,19 @@
 </template>
 
 <script setup>
-const login = async (prov) => {}
+const client = useSupabaseClient()
+const user = useSupabaseUser()
+
+watchEffect(() => {
+  if (user.value) {
+    return navigateTo('/')
+  }
+})
+
+const login = async (prov) => {
+  const { data, error } = await client.auth.signInWithOAuth({
+    provider: prov,
+    redirectTo: window.location.origin
+  })
+}
 </script>
